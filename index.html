@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Musica - Eduardo Alvarez</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- BOTÓN HAMBURGUESA - SOLO SE VE EN MÓVIL -->
+    <!-- ========================================= -->
+
+    <nav class="navbar bg-dark d-lg-none">
+        <div class="container-fluid">
+
+            <button
+                class="btn btn-outline-light"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#menuFiltros"
+                aria-controls="menuFiltros">
+
+                ☰ Filtros
+
+            </button>
+
+            <span class="navbar-brand text-white">
+                Music Albums
+            </span>
+
+        </div>
+    </nav>
+
+
+    <!-- ========================================= -->
+    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- ========================================= -->
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+            <!-- ========================================= -->
+            <!-- MENÚ LATERAL / FORMULARIO -->
+            <!-- ========================================= -->
+
+            <aside
+                class="offcanvas-lg offcanvas-start col-lg-3 col-xl-2 p-4 bg-light"
+                tabindex="-1"
+                id="menuFiltros"
+                aria-labelledby="menuFiltrosLabel">
+
+                <!-- Encabezado del menú en móvil -->
+                <div class="offcanvas-header d-lg-none">
+
+                    <h5
+                        class="offcanvas-title"
+                        id="menuFiltrosLabel">
+
+                        Buscar álbumes
+
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Cerrar">
+                    </button>
+
+                </div>
+
+
+                <!-- Contenido del formulario -->
+                <div class="offcanvas-body d-block">
+
+                    <h4 class="d-none d-lg-block mb-4">
+                        Buscar álbumes
+                    </h4>
+
+
+                    <!-- ================================= -->
+                    <!-- FORMULARIO -->
+                    <!-- ================================= -->
+
+                    <form id="albumFilterForm" name="albumFilterForm">
+
+
+                        <!-- TITLE -->
+                        <div class="mb-3">
+
+                            <label
+                                for="albumTitle"
+                                class="form-label">
+
+                                Title
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="albumTitle"
+                                name="albumTitle"
+                                placeholder="Album title">
+
+                        </div>
+
+
+                        <!-- ARTIST -->
+                        <div class="mb-3">
+
+                            <label
+                                for="albumArtist"
+                                class="form-label">
+
+                                Artist
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="albumArtist"
+                                name="albumArtist"
+                                placeholder="Artist name">
+
+                        </div>
+
+
+                        <!-- RELEASED YEAR -->
+                        <div class="mb-3">
+
+                            <label
+                                for="releaseYear"
+                                class="form-label">
+
+                                Released Year
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="releaseYear"
+                                name="releaseYear"
+                                placeholder="2026"
+                                min="1900"
+                                max="2100">
+
+                        </div>
+
+
+                        <!-- GENRE -->
+                        <div class="mb-3">
+
+                            <label
+                                for="albumGenre"
+                                class="form-label">
+
+                                Genre
+
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="albumGenre"
+                                name="albumGenre">
+
+                                <option value="">
+                                    Select genre
+                                </option>
+
+                                <option value="rock">
+                                    Rock
+                                </option>
+
+                                <option value="pop">
+                                    Pop
+                                </option>
+
+                                <option value="metal">
+                                    Metal
+                                </option>
+
+                                <option value="jazz">
+                                    Jazz
+                                </option>
+
+                                <option value="hip-hop">
+                                    Hip Hop
+                                </option>
+
+                                <option value="electronic">
+                                    Electronic
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- RATING -->
+                        <div class="mb-3">
+
+                            <label
+                                for="albumRating"
+                                class="form-label">
+
+                                Rating
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="albumRating"
+                                name="albumRating"
+                                placeholder="1 - 5"
+                                min="1"
+                                max="5">
+
+                        </div>
+
+
+                        <!-- LISTENED -->
+                        <div class="mb-4">
+
+                            <div class="form-check">
+
+                                <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                    id="albumListened"
+                                    name="albumListened"
+                                    value="true">
+
+                                <label
+                                    class="form-check-label"
+                                    for="albumListened">
+
+                                    Listened
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- BOTONES -->
+
+                        <div class="d-grid gap-2">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+
+                                Enviar
+
+                            </button>
+
+                            <button
+                                type="reset"
+                                class="btn btn-secondary">
+
+                                Resetear
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ========================================= -->
+            <!-- CONTENIDO PRINCIPAL -->
+            <!-- ========================================= -->
+
+            <main class="col-lg-9 col-xl-10 p-4">
+
+
+                <!-- TÍTULO -->
+
+                <div class="mb-4">
+
+                    <h1>
+                        Albums
+                    </h1>
+
+                    <p class="text-muted">
+                        Explore your music collection
+                    </p>
+
+                </div>
+
+
+                <!-- ================================= -->
+                <!-- GRID DE ÁLBUMES -->
+                <!-- ================================= -->
+
+                <div
+                    id="albumContainer"
+                    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
+
+
+                    <!-- ================================= -->
+                    <!-- ÁLBUM 1 - PLANTILLA -->
+                    <!-- ================================= -->
+
+                    <div class="col">
+
+                        <div class="card h-100">
+
+                            <div
+                                class="card-body d-flex align-items-center justify-content-center"
+                                style="min-height: 180px;">
+
+                                <h5 class="card-title">
+                                    Album 1
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================= -->
+                    <!-- ÁLBUM 2 -->
+                    <!-- ================================= -->
+
+                    <div class="col">
+
+                        <div class="card h-100">
+
+                            <div
+                                class="card-body d-flex align-items-center justify-content-center"
+                                style="min-height: 180px;">
+
+                                <h5 class="card-title">
+                                    Album 2
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================= -->
+                    <!-- ÁLBUM 3 -->
+                    <!-- ================================= -->
+
+                    <div class="col">
+
+                        <div class="card h-100">
+
+                            <div
+                                class="card-body d-flex align-items-center justify-content-center"
+                                style="min-height: 180px;">
+
+                                <h5 class="card-title">
+                                    Album 3
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================= -->
+                    <!-- ÁLBUM 4 -->
+                    <!-- ================================= -->
+
+                    <div class="col">
+
+                        <div class="card h-100">
+
+                            <div
+                                class="card-body d-flex align-items-center justify-content-center"
+                                style="min-height: 180px;">
+
+                                <h5 class="card-title">
+                                    Album 4
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <!-- Necesario para el menú hamburguesa -->
+    <!-- ========================================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
